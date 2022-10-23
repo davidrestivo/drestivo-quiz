@@ -20,32 +20,102 @@
       <div class= "large-font">Composer Quiz</div>
       <H1 class="welcome">Try to answer the following questions about Classical Composers within the time limit. Keep in mind that incorrect answers will penalize your score Time by 10 seconds! </H1>
       <button class="start-button">Start</button>
+      <button id="reset-button">Reset Score</button>
     </section>
 
-    <section>
+    <!-- <section>
       <div class="card results">
         <div id = "score-container"></div>
-        <h2>Score: <span class="win">0 </span> </h2>
+        <h2>Score: <span class="score">0 </span> </h2>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <button class="reset-button">Reset Score</button>
+    <form name="quiz" id="quiz">
+      <div>
+        <p id="ques1" class="ques">Who wrote Eine Klein Nacht Music?</p>
+        <div id="questionForm1" class="questionForm">
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Mozart"> Mozart</p>
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Beethoven"> Beethoven</p>
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Brahms"> Brahms</p>
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Stravinsky"> Stravinsky</p>
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Barber"> Barber</p>
+          <!-- <p id="resultTxt1"></p> -->
+        </div>
+        <input id="submit1" class="submit" type="button" name="" value="Submit" onclick="question1result()">
+      </div>  
 
-  <h1 id = "question">Who wrote Eine Klein Nacht Music?</h1><br>
-    <form class="questionForm">
-      <input class="questions" type="radio" name="choice" value="Mozart"> Mozart
-      <input class="questions" type="radio" name="choice" value="Beethoven"> Beethoven
-      <input class="questions" type="radio" name="choice" value="Brahms"> Brahms
-      <input class="questions" type="radio" name="choice" value="Stravinsky"> Stravinsky
-      <input class="questions" type="radio" name="choice" value="Stravinsky"> Stravinsky
+      <div>
+        <p id="ques2" class="ques">Who wrote Fur Elise?</p>
+        <div id="questionForm2" class="questionForm">
+          <p class="choiceBtn"><input type="radio" name="ques2" value="Mozart"> Mozart</p>
+          <p class="choiceBtn"><input type="radio" name="ques2" value="Beethoven"> Beethoven</p>
+          <p class="choiceBtn"><input type="radio" name="ques2" value="Brahms"> Brahms</p>
+          <p class="choiceBtn"><input type="radio" name="ques2" value="Stravinsky"> Stravinsky</p>
+          <p class="choiceBtn"><input type="radio" name="ques2" value="Barber"> Barber</p>
+          <!-- <p id="resultTxt2"></p> -->
+        </div>
+        <input id="submit2" class="submit" type="button" name="" value="Submit" onclick="question2result()">
+      </div>
+
+      <div>
+        <p id="ques3" class="ques">Who wrote the Hungarian Dances?</p>
+        <div id="questionForm3" class="questionForm">
+          <p class="choiceBtn"><input type="radio" name="ques3" value="Mozart"> Mozart</p>
+          <p class="choiceBtn"><input type="radio" name="ques3" value="Beethoven"> Beethoven</p>
+          <p class="choiceBtn"><input type="radio" name="ques3" value="Brahms"> Brahms</p>
+          <p class="choiceBtn"><input type="radio" name="ques3" value="Stravinsky"> Stravinsky</p>
+          <p class="choiceBtn"><input type="radio" name="ques3" value="Barber"> Barber</p>
+          <!-- <p id="resultTxt"></p> -->
+        </div>
+        <input id="submit3" class="submit" type="button" name="" value="Submit" onclick="question3result()">
+      </div>
+
+      <div>
+        <p id="ques4" class="ques">Who wrote the Rite of Spring?</p>
+        <div id="questionForm4" class="questionForm">
+          <p class="choiceBtn"><input type="radio" name="ques4" value="Mozart"> Mozart</p>
+          <p class="choiceBtn"><input type="radio" name="ques4" value="Beethoven"> Beethoven</p>
+          <p class="choiceBtn"><input type="radio" name="ques4" value="Brahms"> Brahms</p>
+          <p class="choiceBtn"><input type="radio" name="ques4" value="Stravinsky"> Stravinsky</p>
+          <p class="choiceBtn"><input type="radio" name="ques4" value="Barber"> Barber</p>
+        </div>
+        <input id="submit4" class="submit" type="button" name="" value="Submit" onclick="question4result()">
+      </div>
+
+      <div>
+        <p id="ques5" class="ques">Who wrote Adagio for Strings</p>
+        <div id="questionForm5" class="questionForm">
+          <p class="choiceBtn"><input type="radio" name="ques5" value="Mozart"> Mozart</p>
+          <p class="choiceBtn"><input type="radio" name="ques5" value="Beethoven"> Beethoven</p>
+          <p class="choiceBtn"><input type="radio" name="ques5" value="Brahms"> Brahms</p>
+          <p class="choiceBtn"><input type="radio" name="ques5" value="Stravinsky"> Stravinsky</p>
+          <p class="choiceBtn"><input type="radio" name="ques5" value="Barber"> Barber</p>
+        </div>
+        <input id="submit5" class="submit" type="button" name="" value="Submit" onclick="question5result()">
+      </div>
+
+
+      <div id="score">
+        <p id="allDone">All Done!</p>
+        <p id="finalScore"></p>
+        <p id="enterInitials">Enter initials:  <input></p>
+        <input id="submitInitials" class="submitInitials" type="button" name="" value="Submit" onclick="replay()">
+      </div>
+      
+      <div id="replay">
+        <p id="yourScore"></p>
+        <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload();">
+
+      </div>
+
+      
+
+    
+       
     </form>
-    <button class=submitBtn onclick="submitAnswer()">Submit Answer</button>
+  
         
-
-
-   
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

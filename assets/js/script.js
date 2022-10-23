@@ -36,39 +36,68 @@
 //If the Restart button is pushed, the game restarts by retriggering the 1st function
 //If the game is over, display initials with the score again.
 
-var correct = document.querySelector(".correct");
-var wrong = document.querySelector(".wrong");
+// var correct = document.querySelector(".correct");
+// var wrong = document.querySelector(".wrong");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-var welcomeElement = document.querySelector(".welcomeMessage");
-var questionsElement = document.querySelector("#question");
+// var welcomeElement = document.querySelector(".welcomeMessage");
+// var questionsElement = document.querySelector("#question");
 
-var chosenWord = "";
-var numBlanks = 0;
-var scoreCounter = 0;
-var isCorrect = false;
+
+// var q1 = document.querySelector.questionForm1;
+// var q1=document.quiz.ques1.value;
+// var q2=document.questionForm2.value="";
+// var q3=document.questionForm3.value="";
+// var q4=document.questionForm4.value="";
+// var q5=document.questionForm5.value="";
+// var scoreCounter = 0;
+var score = 0;
 var timer;
 var timerCount;
+var wordBlank = document.querySelector("#resultTxt");
+var finalScore = document.getElementById("currentScore");
+var initialsEl = document.getElementById("submitInitials");
+// var q1 = "";
+// var q2 = "";
+// var initials = document.getElementById("submitInitials").value;
+
 
 
 
 function init() {
-    document.getElementById(welcomeElement).style.display = "block";
-    document.getElementById(questionsElement).style.display = "none";
-    getScore();
-  }
+    document.getElementById("welcomeMessage").style.display = "block";
+    document.getElementById("ques1").style.display = "none";
+    document.getElementById("ques2").style.display = "none";
+    document.getElementById("ques3").style.display = "none";
+    document.getElementById("ques4").style.display = "none";
+    document.getElementById("ques5").style.display = "none";
+    document.getElementById("questionForm1").style.display = "none";
+    document.getElementById("questionForm2").style.display = "none";
+    document.getElementById("questionForm3").style.display = "none";
+    document.getElementById("questionForm4").style.display = "none";
+    document.getElementById("questionForm5").style.display = "none";
+    document.getElementById("submit1").style.display = "none";
+    document.getElementById("submit2").style.display = "none";
+    document.getElementById("submit3").style.display = "none";
+    document.getElementById("submit4").style.display = "none";
+    document.getElementById("submit5").style.display = "none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("replay").style.display = "none";
+
+
+    
+    // getScore();
+    
+}
 
 function startGame() {
-    isCorrect = false;
     timerCount = 60;
     startButton.disabled = true;
-    document.getElementById("welcomeMessage").style.display = 'none';
-
-    // document.getElementById("#welcomeMessage").style.display = "none";
-    document.getElementById("#question").style.display = "block";
-  
+    document.getElementById("welcomeMessage").style.display = "none";
+    document.getElementById("ques1").style.display = "block";
+    document.getElementById("questionForm1").style.display = "block";
+    document.getElementById("submit1").style.display = "block";
     startTimer();
-    submitAnswer1();
   }
    
   
@@ -78,90 +107,145 @@ function startGame() {
     timer = setInterval(function() {
       timerCount--;
       timerElement.textContent = timerCount;
+      if (timerCount <= 0) {
+        clearInterval(timer);
+      }
+  
       
     }, 1000);
   }
 
-  var submitAnswer1 = function() {
-
-    var radios = document.getElementsByName('choice');
-    var val= "";
-    for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-           val = radios[i].value; 
-           break;
-         }
+  
+  function question1result(){ 
+    var q1=document.quiz.ques1.value;
+    console.log(document.quiz.ques1.value);
+    if (q1==="Mozart") {
+      score++
     }
+    else {
+      timerCount = timerCount - 15;
+    }   
+    document.getElementById("ques1").style.display = "none";
+    document.getElementById("questionForm1").style.display = "none";
+    document.getElementById("submit1").style.display = "none";
+    document.getElementById("ques2").style.display = "block";
+    document.getElementById("questionForm2").style.display = "block";
+    document.getElementById("submit2").style.display = "block";  
+    console.log(q1);
+  }
+
+  function question2result(){
+    var q2=document.quiz.ques2.value;
+    if (q2==="Beethoven") {
+      score++ 
+    }
+    else {
+      timerCount = timerCount - 15;
+    } 
+    document.getElementById("ques2").style.display = "none";
+    document.getElementById("questionForm2").style.display = "none";
+    document.getElementById("submit2").style.display = "none";
+    document.getElementById("ques3").style.display = "block";
+    document.getElementById("questionForm3").style.display = "block";
+    document.getElementById("submit3").style.display = "block";
+    console.log(q2);
+  }
+
+  function question3result(){ 
+    var q3=document.quiz.ques3.value;
+    if (q3==="Brahms") {
+      score++
+    }
+    else {
+           timerCount = timerCount - 15;
+    } 
+    document.getElementById("ques3").style.display = "none";
+    document.getElementById("questionForm3").style.display = "none";
+    document.getElementById("submit3").style.display = "none";
+    document.getElementById("ques4").style.display = "block";
+    document.getElementById("questionForm4").style.display = "block";
+    document.getElementById("submit4").style.display = "block";
+    console.log(score);
+  }
+
+  function question4result(){ 
+    var q4=document.quiz.ques4.value;
+    if (q4==="Stravinsky") {
+      score++
+        }
+    else {
+         timerCount = timerCount - 15;
+    }   
+    document.getElementById("ques4").style.display = "none";
+    document.getElementById("questionForm4").style.display = "none";
+    document.getElementById("submit4").style.display = "none";
+    document.getElementById("ques5").style.display = "block";
+    document.getElementById("questionForm5").style.display = "block";
+    document.getElementById("submit5").style.display = "block";
+    console.log(score);
+  }
+
+  function question5result(){ 
+    var q5=document.quiz.ques5.value;
+    if (q5==="Barber") {
+      score++
+        }
+    else {
+          timerCount = timerCount - 15;
+    } 
+    document.getElementById("ques5").style.display = "none";
+    document.getElementById("questionForm5").style.display = "none";
+    document.getElementById("submit5").style.display = "none";
+    console.log(score);
+    getScore();
+    saveHighScore(); 
+   
+
+  }
+
+  function getScore(){
+    document.getElementById("finalScore").innerHTML = "Your final score is: " + score;
+    document.getElementById("score").style.display = "block";
+    clearInterval(timer);
+    saveHighScore()
     
-    if ( val == "Scripting" ) {
-      alert('Answer is correct !');
-    } else {
-      alert('Answer is wrong');
-    }
-  };
-
-
-  function answerCorrect() {
-    wordBlank.textContent = "Correct!";
-    winCounter++
-    startButton.disabled = false;
-    setCorrect()
-  }
-  
-  // The loseGame function is called when timer reaches 0
-  function answerWrong() {
-    wordBlank.textContent = "Wrong";
-    loseCounter++
-    startButton.disabled = false;
-    setWrong()
   }
 
+  function replay(){
+    document.getElementById("score").style.display = "none";
+    document.getElementById("replay").style.display = "block";
+    document.getElementById("yourScore").style.display = "block";
+    document.getElementById("playAgain").style.display = "block";
+    document.getElementById("yourScore").innerHTML = initialsEl + score;
+   
+  
 
-  // Updates win count on screen and sets win count to client storage
-  function setCorrect() {
-    correct.textContent = correctCounter;
-    localStorage.setItem("correctCount", correctCounter);
   }
+
+  function saveHighScore() {
+    var initials = initialsEl.value
+    var highScores = JSON.parse(window.localStorage.getItem("highScore"));
+    var newScore = {score:timerCount,
+    initials:initials,};
+    highScores.push(newScore);
+    window.localStorage.setItem("highScores", JSON.stringify(highScores));
+    // window.location.href="highScores.html";
+
+   }
+
   
-  // Updates lose count on screen and sets lose count to client storage
-  function setWrong() {
-    wrong.textContent = wrongCounter;
-    localStorage.setItem("wrongCount", wrongCounter);
-  }
-  
-  // These functions are used by init
-  function getScore() {
-    // Get stored value from client storage, if it exists
-    var storedWins = localStorage.getItem("winCount");
-    // If stored value doesn't exist, set counter to 0
-    if (storedScore === null) {
-      scoreCounter = 0;
-    } else {
-      // If a value is retrieved from client storage set the winCounter to that value
-      scoreCounter = storedScore;
-    }
-    //Render win count to page
-    score.textContent = scoreCounter;
-  }
-  
-  
-  // Attach event listener to start button to call startGame function on click
   startButton.addEventListener("click", startGame);
   
-  // Calls init() so that it fires when page opened
   init();
   
-  // Bonus: Add reset button
   var resetButton = document.querySelector(".reset-button");
   
   function resetGame() {
-    // Resets win and loss counts
-    scoreCounter = 0;
-    // Renders win and loss counts and sets them into client storage
-    setScore()
+    score = 0;
+    // setScore()
   }
-  // Attaches event listener to button
-  resetButton.addEventListener("click", resetGame);
+
+  // resetButton.addEventListener("click", resetGame);
 
 
 
