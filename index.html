@@ -19,17 +19,8 @@
     <section id="welcomeMessage">
       <div class= "large-font">Composer Quiz</div>
       <H1 class="welcome">Try to answer the following questions about Classical Composers within the time limit. Keep in mind that incorrect answers will penalize your score Time by 10 seconds! </H1>
-      <button class="start-button">Start</button>
-      <button id="reset-button">Reset Score</button>
+      <button class="start-button">Start</button>  
     </section>
-
-    <!-- <section>
-      <div class="card results">
-        <div id = "score-container"></div>
-        <h2>Score: <span class="score">0 </span> </h2>
-        </div>
-      </div>
-    </section> -->
 
     <form name="quiz" id="quiz">
       <div>
@@ -39,8 +30,7 @@
           <p class="choiceBtn"><input type="radio" name="ques1" value="Beethoven"> Beethoven</p>
           <p class="choiceBtn"><input type="radio" name="ques1" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques1" value="Stravinsky"> Stravinsky</p>
-          <p class="choiceBtn"><input type="radio" name="ques1" value="Barber"> Barber</p>
-          <!-- <p id="resultTxt1"></p> -->
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Barber"> Barber</p>        
         </div>
         <input id="submit1" class="submit" type="button" name="" value="Submit" onclick="question1result()">
       </div>  
@@ -99,13 +89,15 @@
       <div id="score">
         <p id="allDone">All Done!</p>
         <p id="finalScore"></p>
-        <p id="enterInitials">Enter initials:  <input></p>
-        <input id="submitInitials" class="submitInitials" type="button" name="" value="Submit" onclick="replay()">
+        <p id="enterInitials">Enter initials:  <input type="text" name="score"></p>
+        <button type="button" value="Submit" class="submitInitials" onclick="replay()">Submit</button>
       </div>
       
       <div id="replay">
         <p id="yourScore"></p>
         <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload();">
+        <input id="resetGame" class="replay" type="button" name="" value="Reset Game" onclick="location.resetGame();">
+
 
       </div>
 

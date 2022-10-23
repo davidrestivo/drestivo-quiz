@@ -36,30 +36,19 @@
 //If the Restart button is pushed, the game restarts by retriggering the 1st function
 //If the game is over, display initials with the score again.
 
-// var correct = document.querySelector(".correct");
-// var wrong = document.querySelector(".wrong");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
-// var welcomeElement = document.querySelector(".welcomeMessage");
-// var questionsElement = document.querySelector("#question");
-
-
-// var q1 = document.querySelector.questionForm1;
-// var q1=document.quiz.ques1.value;
-// var q2=document.questionForm2.value="";
-// var q3=document.questionForm3.value="";
-// var q4=document.questionForm4.value="";
-// var q5=document.questionForm5.value="";
-// var scoreCounter = 0;
 var score = 0;
 var timer;
 var timerCount;
 var wordBlank = document.querySelector("#resultTxt");
 var finalScore = document.getElementById("currentScore");
-var initialsEl = document.getElementById("submitInitials");
-// var q1 = "";
-// var q2 = "";
-// var initials = document.getElementById("submitInitials").value;
+var initialsEl;
+var highScore = [];
+// var initialsEl = document.querySelector("#score");
+ 
+
+
 
 
 
@@ -109,6 +98,7 @@ function startGame() {
       timerElement.textContent = timerCount;
       if (timerCount <= 0) {
         clearInterval(timer);
+        timerCount = 0
       }
   
       
@@ -198,7 +188,7 @@ function startGame() {
     document.getElementById("submit5").style.display = "none";
     console.log(score);
     getScore();
-    saveHighScore(); 
+    // saveHighScore(); 
    
 
   }
@@ -207,7 +197,6 @@ function startGame() {
     document.getElementById("finalScore").innerHTML = "Your final score is: " + score;
     document.getElementById("score").style.display = "block";
     clearInterval(timer);
-    saveHighScore()
     
   }
 
@@ -216,21 +205,21 @@ function startGame() {
     document.getElementById("replay").style.display = "block";
     document.getElementById("yourScore").style.display = "block";
     document.getElementById("playAgain").style.display = "block";
-    document.getElementById("yourScore").innerHTML = initialsEl + score;
-   
-  
+    initialsEl=document.quiz.score.value;
+    console.log(initialsEl)
+    document.getElementById("yourScore").innerHTML = initialsEl +":  " + score;
+    saveHighScore()
 
   }
 
   function saveHighScore() {
-    var initials = initialsEl.value
-    var highScores = JSON.parse(window.localStorage.getItem("highScore"));
-    var newScore = {score:timerCount,
-    initials:initials,};
-    highScores.push(newScore);
-    window.localStorage.setItem("highScores", JSON.stringify(highScores));
-    // window.location.href="highScores.html";
-
+    var initials = initialsEl
+    var highScore = JSON.parse(window.localStorage.getItem("highScore"));
+    var newScore = {score,
+    initials};
+    highScore.push(newScore);
+    window.localStorage.setItem("highScore", JSON.stringify(highScore));
+    console.log(highScore);
    }
 
   
@@ -241,7 +230,7 @@ function startGame() {
   var resetButton = document.querySelector(".reset-button");
   
   function resetGame() {
-    score = 0;
+    highScore = 0;
     // setScore()
   }
 
