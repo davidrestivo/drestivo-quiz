@@ -9,7 +9,8 @@
   </head>
   <body>
     <header class="header">
-       <button class="high-scores">Press to view Highscores</button>
+       <!-- <button class="high-scores">Press to view Highscores</button> -->
+       <input id="high-scores" class="high-scores" type="button" name="" value="Press to view Highscores" onclick="printHighScores()">
        <div class= "timer">
           <h3>timer: </h3>
           <div class="timer-count">60</div>
@@ -95,12 +96,14 @@
       
       <div id="replay">
         <p id="yourScore"></p>
-        <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload();">
-        <input id="resetGame" class="replay" type="button" name="" value="Reset Game" onclick="location.resetGame();">
-
-
+        <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
+        <input id="resetGame" class="replay" type="button" name="" value="Reset Game" onclick="replayGame()">
       </div>
 
+      <div id="highScorePage">    
+        <p id="hsTitle">High Scores</p>
+        <input id="playAgainHS" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
+      </div>
       
 
     

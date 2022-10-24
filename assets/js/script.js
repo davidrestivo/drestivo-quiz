@@ -44,15 +44,8 @@ var timerCount;
 var wordBlank = document.querySelector("#resultTxt");
 var finalScore = document.getElementById("currentScore");
 var initialsEl;
-var highScore = [];
-// var initialsEl = document.querySelector("#score");
+var highScore;
  
-
-
-
-
-
-
 function init() {
     document.getElementById("welcomeMessage").style.display = "block";
     document.getElementById("ques1").style.display = "none";
@@ -72,6 +65,7 @@ function init() {
     document.getElementById("submit5").style.display = "none";
     document.getElementById("score").style.display = "none";
     document.getElementById("replay").style.display = "none";
+    document.getElementById("highScorePage").style.display = "none";
 
 
     
@@ -188,9 +182,7 @@ function startGame() {
     document.getElementById("submit5").style.display = "none";
     console.log(score);
     getScore();
-    // saveHighScore(); 
    
-
   }
 
   function getScore(){
@@ -222,17 +214,47 @@ function startGame() {
     console.log(highScore);
    }
 
+  function printHighScores(){
+    document.getElementById("highScorePage").style.display = "block";
+    document.getElementById("welcomeMessage").style.display = "none";
+    document.getElementById("replay").style.display = "none";
+    document.getElementById("yourScore").style.display = "none";
+    document.getElementById("playAgain").style.display = "none";
+    document.getElementById("ques1").style.display = "none";
+    document.getElementById("ques2").style.display = "none";
+    document.getElementById("ques3").style.display = "none";
+    document.getElementById("ques4").style.display = "none";
+    document.getElementById("ques5").style.display = "none";
+    document.getElementById("questionForm1").style.display = "none";
+    document.getElementById("questionForm2").style.display = "none";
+    document.getElementById("questionForm3").style.display = "none";
+    document.getElementById("questionForm4").style.display = "none";
+    document.getElementById("questionForm5").style.display = "none";
+    document.getElementById("submit1").style.display = "none";
+    document.getElementById("submit2").style.display = "none";
+    document.getElementById("submit3").style.display = "none";
+    document.getElementById("submit4").style.display = "none";
+    document.getElementById("submit5").style.display = "none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("high-scores").style.display = "none";
+    
+    highScore = JSON.parse(window.localStorage.getItem('highScore'));
+    highScore.sort(function(a,b){
+      return b.highScore -a.highScore
+      
+  })
+  console.log(highScore)
+
+
+}
   
   startButton.addEventListener("click", startGame);
   
   init();
   
-  var resetButton = document.querySelector(".reset-button");
+  // var resetButton = document.querySelector(".reset-button");
   
-  function resetGame() {
-    highScore = 0;
-    // setScore()
-  }
+  
 
   // resetButton.addEventListener("click", resetGame);
 
