@@ -45,6 +45,7 @@ var wordBlank = document.querySelector("#resultTxt");
 var finalScore = document.getElementById("currentScore");
 var initialsEl;
 var highScore;
+var highScoreHtml = "";
  
 function init() {
     document.getElementById("welcomeMessage").style.display = "block";
@@ -240,11 +241,17 @@ function startGame() {
     
     highScore = JSON.parse(window.localStorage.getItem('highScore'));
     highScore.sort(function(a,b){
-      return b.highScore -a.highScore
+      return b.score -a.score
       
   })
-  console.log(highScore)
-
+  console.log(highScore);
+  
+  for(var i = 0; i < highScore; i++){
+    highScoreHtml += "<p>" + highScore.initials + highScore.initials + "</p>"
+ }
+    
+ 
+ document.getElementById("sortedScores").innerHTML = highScoreHtml
 
 }
   
