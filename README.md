@@ -15,6 +15,7 @@ I received help from the Columbia University Bootcamp Tutoring services!
 
 ## Screenshot
 
-![Screenshot for my homework](./Assets/images/David%20Restivo%20Quiz%20Screen%20Shot.png)
+![Screenshot for my homework](./assets/images/David%20Restivo%20Quiz%20Screen%20Shot.png)
+
 
 
