@@ -105,15 +105,18 @@ body {
   font-size: 30px;
   font-weight: bolder;
   color: blueviolet;
+  position: absolute;
+  left: 67%;
+  
 }
 
 #sortedScores {
   position: absolute;
-  padding-top: 100px;
-  padding-left: 600px;
-  right: 17%;
-  color: black;
-
+  padding-top: 300px;
+  left: 53%;
+  color: rgb(249, 23, 41);
+  font-weight: bolder;
+  font-size: 30px;  
 }
 
 #form {
@@ -123,8 +126,8 @@ body {
 .ques {
   position: absolute;
   padding-top: 100px;
-  padding-left: 600px;
-  padding-right: 500px;
+  left: 40%;
+  right: 40%;
   font-weight: bolder;
   font-size: 30px;  
 }
@@ -133,8 +136,8 @@ body {
   display: block;
   position: absolute;
   /* padding-top: 180px; */
-  top: 250px;
-  left: 30px;
+  top: 270px;
+  left: 20px;
  left: 48%;
  
 }

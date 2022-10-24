@@ -44,7 +44,7 @@ var timerCount;
 var wordBlank = document.querySelector("#resultTxt");
 var finalScore = document.getElementById("currentScore");
 var initialsEl;
-var highScore;
+var highScore = 0;
 var highScoreHtml = "";
  
 function init() {
@@ -199,14 +199,14 @@ function startGame() {
     document.getElementById("yourScore").style.display = "block";
     document.getElementById("playAgain").style.display = "block";
     initialsEl=document.quiz.score.value;
-    console.log(initialsEl)
+    console.log(initialsEl, score)
     document.getElementById("yourScore").innerHTML = initialsEl +":  " + score;
     saveHighScore()
   }
 
   function saveHighScore() {
     var initials = initialsEl
-    var highScore = JSON.parse(window.localStorage.getItem("highScore"));
+    var highScore = JSON.parse(window.localStorage.getItem("highScore"))||[];
     var newScore = {score,
     initials};
     highScore.push(newScore);
@@ -246,7 +246,7 @@ function startGame() {
   console.log(highScore);
   
   for(var i = 0; i < highScore.length; i++){
-    highScoreHtml += "<p>" + highScore[i].initials + highScore[i].score + "</p>"
+    highScoreHtml += "<p>" + highScore[i].initials + "    " + highScore[i].score + "</p>"
  }
     
  console.log(highScoreHtml);
@@ -256,6 +256,7 @@ function startGame() {
 
 function clearLocal() {
   localStorage.clear();
+
 
 }
   
