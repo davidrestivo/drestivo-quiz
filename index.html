@@ -16,13 +16,13 @@
           <div class="timer-count">60</div>
         </div>   
     </header>
-
+    <!-- added the title page -->
     <section id="welcomeMessage">
       <div class= "large-font">Composer Quiz</div>
       <H1 class="welcome">Try to answer the following questions about Classical Composers within the time limit. Keep in mind that incorrect answers will penalize your score Time by 15 seconds! </H1>
       <button class="start-button">Start</button>  
     </section>
-
+    <!-- added the questions and formatted them -->
     <form name="quiz" id="quiz">
       <div>
         <p id="ques1" class="ques">Who wrote Eine Klein Nacht Music?</p>
@@ -46,7 +46,7 @@
           <p class="choiceBtn"><input type="radio" name="ques2" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques2" value="Barber"> Barber</p>
           <p>________________________________________</p>
-          <!-- <p id="resultTxt2"></p> -->
+       
         </div>
         <input id="submit2" class="submit" type="button" name="" value="Submit" onclick="question2result()">
       </div>
@@ -60,7 +60,7 @@
           <p class="choiceBtn"><input type="radio" name="ques3" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques3" value="Barber"> Barber</p>
           <p>________________________________________</p>
-          <!-- <p id="resultTxt"></p> -->
+       
         </div>
         <input id="submit3" class="submit" type="button" name="" value="Submit" onclick="question3result()">
       </div>
@@ -91,26 +91,26 @@
         <input id="submit5" class="submit" type="button" name="" value="Submit" onclick="question5result()">
       </div>
 
-
+      <!-- added the add initials page -->
       <div id="score">
         <p id="allDone">All Done!</p>
         <p id="finalScore"></p>
         <p id="enterInitials">Enter initials:  <input type="text" name="score"></p>
         <button type="button" value="Submit" class="submitInitials" onclick="replay()">Submit</button>
       </div>
-      
+      <!-- added the final page -->
       <div id="replay">
         <p id="yourScore"></p>
         <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
         <input id="resetGame" class="replay" type="button" name="" value="Reset Game" onclick="clearLocal()">
       </div>
-
+      <!-- added the highscore page -->
       <div id="highScorePage">    
         <p id="hsTitle">High Scores</p>
         <input id="playAgainHS" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
         <input id="resetGameHS" class="replayHS" type="button" name="" value="Reset Game" onclick="clearLocal()">
       </div>
-
+      <!-- added the sorting element to the page -->
       <ol id="sortedScores"></ol>
       
 

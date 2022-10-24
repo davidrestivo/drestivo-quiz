@@ -48,6 +48,7 @@ var highScore = 0;
 var highScoreHtml = "";
  
 function init() {
+    // inits all the pages to null except the welcome page
     document.getElementById("welcomeMessage").style.display = "block";
     document.getElementById("ques1").style.display = "none";
     document.getElementById("ques2").style.display = "none";
@@ -66,12 +67,7 @@ function init() {
     document.getElementById("submit5").style.display = "none";
     document.getElementById("score").style.display = "none";
     document.getElementById("replay").style.display = "none";
-    document.getElementById("highScorePage").style.display = "none";
-
-
-    
-    // getScore();
-    
+    document.getElementById("highScorePage").style.display = "none";    
 }
 
 function startGame() {
@@ -83,18 +79,15 @@ function startGame() {
     document.getElementById("submit1").style.display = "block";
     startTimer();
   }
-   
-  
-
+  //  this function starts the timer - if the timer finishes before the game is finished, it clears the pages and brings up the final score page
   function startTimer() {
-    // Sets timer
     timer = setInterval(function() {
       timerCount--;
       timerElement.textContent = timerCount;
       if (timerCount <= 0) {
         clearInterval(timer);
         timerCount = 0
-      
+        
         getScore()
         document.getElementById("ques1").style.display = "none";
         document.getElementById("questionForm1").style.display = "none";
@@ -111,13 +104,11 @@ function startGame() {
         document.getElementById("ques5").style.display = "none";
         document.getElementById("questionForm5").style.display = "none";
         document.getElementById("submit5").style.display = "none";
-      }
-  
-      
+      }   
     }, 1000);
   }
+  // added coding for all the questions. Each question will subtract 15 secs from the timer if the answer is wrong
 
-  
   function question1result(){ 
     var q1=document.quiz.ques1.value;
     console.log(document.quiz.ques1.value);
@@ -200,16 +191,17 @@ function startGame() {
     document.getElementById("submit5").style.display = "none";
     console.log(score);
     getScore();
+    // questions are done and it calls for the score to be called function
    
   }
-
+  // this function calls for the score and clears the timer
   function getScore(){
     document.getElementById("finalScore").innerHTML = "Your final score is: " + score;
     document.getElementById("score").style.display = "block";
     clearInterval(timer);
     
   }
-
+  // this function displays the final score and asks if you want to play again or reset the scores
   function replay(){
     document.getElementById("score").style.display = "none";
     document.getElementById("replay").style.display = "block";
@@ -221,6 +213,7 @@ function startGame() {
     saveHighScore()
   }
 
+  // this function stores the score to the JSON Array
   function saveHighScore() {
     var initials = initialsEl
     var highScore = JSON.parse(window.localStorage.getItem("highScore"))||[];
@@ -230,7 +223,7 @@ function startGame() {
     window.localStorage.setItem("highScore", JSON.stringify(highScore));
     
    }
-
+  //  this function sorts the highscores and and prints them to the highscore page
   function printHighScores(){
     document.getElementById("highScorePage").style.display = "block";
     document.getElementById("welcomeMessage").style.display = "none";
@@ -260,7 +253,7 @@ function startGame() {
       return b.score -a.score
       
   })
-  console.log(highScore);
+  // console.log(highScore);
   
   for(var i = 0; i < highScore.length; i++){
     highScoreHtml += "<li>" + highScore[i].initials + "    " + highScore[i].score + "</li>"
@@ -271,6 +264,7 @@ function startGame() {
 
 }
 
+// This function clears the local storage
 function clearLocal() {
   localStorage.clear();
 
@@ -281,11 +275,7 @@ function clearLocal() {
   
   init();
   
-  // var resetButton = document.querySelector(".reset-button");
-  
-  
 
-  // resetButton.addEventListener("click", resetGame);
 
 
 
