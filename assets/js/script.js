@@ -94,6 +94,23 @@ function startGame() {
       if (timerCount <= 0) {
         clearInterval(timer);
         timerCount = 0
+      
+        getScore()
+        document.getElementById("ques1").style.display = "none";
+        document.getElementById("questionForm1").style.display = "none";
+        document.getElementById("submit1").style.display = "none";
+        document.getElementById("ques2").style.display = "none";
+        document.getElementById("questionForm2").style.display = "none";
+        document.getElementById("submit2").style.display = "none";
+        document.getElementById("ques3").style.display = "none";
+        document.getElementById("questionForm3").style.display = "none";
+        document.getElementById("submit3").style.display = "none";
+        document.getElementById("ques4").style.display = "none";
+        document.getElementById("questionForm4").style.display = "none";
+        document.getElementById("submit4").style.display = "none";
+        document.getElementById("ques5").style.display = "none";
+        document.getElementById("questionForm5").style.display = "none";
+        document.getElementById("submit5").style.display = "none";
       }
   
       
@@ -246,7 +263,7 @@ function startGame() {
   console.log(highScore);
   
   for(var i = 0; i < highScore.length; i++){
-    highScoreHtml += "<p>" + highScore[i].initials + "    " + highScore[i].score + "</p>"
+    highScoreHtml += "<li>" + highScore[i].initials + "    " + highScore[i].score + "</li>"
  }
     
  console.log(highScoreHtml);

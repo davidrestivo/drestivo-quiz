@@ -10,7 +10,7 @@
   <body>
     <header class="header">
        <!-- <button class="high-scores">Press to view Highscores</button> -->
-       <input id="high-scores" class="high-scores" type="button" name="" value="Press to view Highscores" onclick="printHighScores()">
+       <input id="high-scores" class="high-scores" type="button" name="" value="View Highscores" onclick="printHighScores()">
        <div class= "timer">
           <h3>timer: </h3>
           <div class="timer-count">60</div>
@@ -31,7 +31,8 @@
           <p class="choiceBtn"><input type="radio" name="ques1" value="Beethoven"> Beethoven</p>
           <p class="choiceBtn"><input type="radio" name="ques1" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques1" value="Stravinsky"> Stravinsky</p>
-          <p class="choiceBtn"><input type="radio" name="ques1" value="Barber"> Barber</p>        
+          <p class="choiceBtn"><input type="radio" name="ques1" value="Barber"> Barber</p> 
+          <p>________________________________________</p>       
         </div>
         <input id="submit1" class="submit" type="button" name="" value="Submit" onclick="question1result()">
       </div>  
@@ -44,6 +45,7 @@
           <p class="choiceBtn"><input type="radio" name="ques2" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques2" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques2" value="Barber"> Barber</p>
+          <p>________________________________________</p>
           <!-- <p id="resultTxt2"></p> -->
         </div>
         <input id="submit2" class="submit" type="button" name="" value="Submit" onclick="question2result()">
@@ -57,6 +59,7 @@
           <p class="choiceBtn"><input type="radio" name="ques3" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques3" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques3" value="Barber"> Barber</p>
+          <p>________________________________________</p>
           <!-- <p id="resultTxt"></p> -->
         </div>
         <input id="submit3" class="submit" type="button" name="" value="Submit" onclick="question3result()">
@@ -70,6 +73,7 @@
           <p class="choiceBtn"><input type="radio" name="ques4" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques4" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques4" value="Barber"> Barber</p>
+          <p>________________________________________</p>
         </div>
         <input id="submit4" class="submit" type="button" name="" value="Submit" onclick="question4result()">
       </div>
@@ -82,6 +86,7 @@
           <p class="choiceBtn"><input type="radio" name="ques5" value="Brahms"> Brahms</p>
           <p class="choiceBtn"><input type="radio" name="ques5" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques5" value="Barber"> Barber</p>
+          <p>________________________________________</p>
         </div>
         <input id="submit5" class="submit" type="button" name="" value="Submit" onclick="question5result()">
       </div>
@@ -103,9 +108,10 @@
       <div id="highScorePage">    
         <p id="hsTitle">High Scores</p>
         <input id="playAgainHS" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
+        <input id="resetGameHS" class="replayHS" type="button" name="" value="Reset Game" onclick="clearLocal()">
       </div>
 
-      <div id="sortedScores"></div>
+      <ol id="sortedScores"></ol>
       
 
     

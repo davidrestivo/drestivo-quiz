@@ -11,7 +11,6 @@ body {
  
 }
 
-
 .header {
   padding: 20px;
   color: #ffffff;
@@ -19,16 +18,15 @@ body {
 
 .high-scores {
   display: inline-block;
-  color: black;
-  background-color: blueviolet;
-  color: white;
+  color: blueviolet;
+  background-color: white;
+  border: #ffffff;
   cursor: pointer;
   padding: 5px;
- 
+  font-size: 15px;
 }
 
 .timer {
-
   color: black;
   display: inline-flex;
   /* padding-top: 5px; */
@@ -43,18 +41,10 @@ body {
   padding-left: 10px;
 }
 
-
 .score-container {
   display: flex;
   justify-content: space-between;
   margin-top: 170px;
-}
-
-
-.card {
-  position: absolute;
-  left: 45%;
-  padding: 20px;
 }
 
 .start-button {
@@ -76,7 +66,6 @@ body {
   position: absolute;
   padding-top: 50px;
   padding-left: 41%;
-
 }
 
 .welcome {
@@ -104,10 +93,10 @@ body {
 #hsTitle {
   font-size: 30px;
   font-weight: bolder;
-  color: blueviolet;
+  color: black;
   position: absolute;
   left: 67%;
-  
+  text-decoration: underline;
 }
 
 #sortedScores {
@@ -136,47 +125,61 @@ body {
   display: block;
   position: absolute;
   /* padding-top: 180px; */
-  top: 270px;
-  left: 20px;
- left: 48%;
+  top: 40%;
+ left: 40%;
  
 }
 
 .choiceBtn:hover {
   background-color: blue;
   color: white;
-  height: 20px;
-  width: 100px;
-  margin: 2px;
+  height: 40px;
+  width: 200px;
+  margin: 4px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 
 }
 
 .choiceBtn {
   background-color: blueviolet;
   color: white;
-  height: 20px;
-  width: 100px;
-  margin: 2px;
+  height: 40px;
+  width: 200px;
+  padding-top: 10px;
+  margin: 4px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .submit {
   position: absolute;
-  top: 60%;
-  left: 49%;
+  top: 75%;
+  left: 40%;
+  right: 48%;
   padding: 10px;
-  font-weight: bolder;
   background-color: blueviolet;
   color: white;
+  height: 70px;
+  width: 200px;
+  font-size: 30px;
 }
 
 .submitInitials {
   position: absolute;
   top: 75%;
-  left: 49%;
+  left: 45%;
+  right: 48%;
   padding: 10px;
   font-weight: bolder;
   background-color: blueviolet;
   color: white;
+  height: 70px;
+  width: 200px;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 #finalScore {
@@ -258,31 +261,18 @@ body {
   color: white;
 }
 
-/* #playAgain-button {
+#resetGameHS{
   font-size: 16px;
   font-weight: bold;
   height: 50px;
   width: 200px;
   margin: 0;
   position: absolute;
-  top: 60%;
-  left: 43%; 
+  top: 100%;
+  left: 20%;  
   background-color: blueviolet;
   color: white;
-} */
+}
 
-/* #reset-button {
-  font-size: 16px;
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  margin: 0;
-  position: absolute;
-  top: 45%;
-  left: 43%;
-  background-color: blueviolet;
-  color: white; */
- 
-/* } */
 
 
