@@ -202,7 +202,6 @@ function startGame() {
     console.log(initialsEl)
     document.getElementById("yourScore").innerHTML = initialsEl +":  " + score;
     saveHighScore()
-
   }
 
   function saveHighScore() {
@@ -212,7 +211,7 @@ function startGame() {
     initials};
     highScore.push(newScore);
     window.localStorage.setItem("highScore", JSON.stringify(highScore));
-    console.log(highScore);
+    
    }
 
   function printHighScores(){
@@ -246,12 +245,17 @@ function startGame() {
   })
   console.log(highScore);
   
-  for(var i = 0; i < highScore; i++){
-    highScoreHtml += "<p>" + highScore.initials + highScore.initials + "</p>"
+  for(var i = 0; i < highScore.length; i++){
+    highScoreHtml += "<p>" + highScore[i].initials + highScore[i].score + "</p>"
  }
     
- 
+ console.log(highScoreHtml);
  document.getElementById("sortedScores").innerHTML = highScoreHtml
+
+}
+
+function clearLocal() {
+  localStorage.clear();
 
 }
   

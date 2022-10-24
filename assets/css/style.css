@@ -105,7 +105,14 @@ body {
   font-size: 30px;
   font-weight: bolder;
   color: blueviolet;
+}
 
+#sortedScores {
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 600px;
+  right: 17%;
+  color: black;
 
 }
 
