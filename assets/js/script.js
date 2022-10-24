@@ -108,15 +108,25 @@ function startGame() {
     }, 1000);
   }
   // added coding for all the questions. Each question will subtract 15 secs from the timer if the answer is wrong
+  // added an indicator for answer status
 
   function question1result(){ 
     var q1=document.quiz.ques1.value;
     console.log(document.quiz.ques1.value);
     if (q1==="Mozart") {
       score++
+      document.getElementById("answerStatus").innerHTML = "Correct!";
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     }
     else {
       timerCount = timerCount - 15;
+      document.getElementById("answerStatus").innerHTML = "Wrong!"
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
+      
     }   
     document.getElementById("ques1").style.display = "none";
     document.getElementById("questionForm1").style.display = "none";
@@ -125,15 +135,24 @@ function startGame() {
     document.getElementById("questionForm2").style.display = "block";
     document.getElementById("submit2").style.display = "block";  
     console.log(q1);
+    
   }
 
   function question2result(){
     var q2=document.quiz.ques2.value;
     if (q2==="Beethoven") {
       score++ 
+      document.getElementById("answerStatus").innerHTML = "Correct!";
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     }
     else {
       timerCount = timerCount - 15;
+      document.getElementById("answerStatus").innerHTML = "Wrong!"
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     } 
     document.getElementById("ques2").style.display = "none";
     document.getElementById("questionForm2").style.display = "none";
@@ -148,9 +167,17 @@ function startGame() {
     var q3=document.quiz.ques3.value;
     if (q3==="Brahms") {
       score++
+      document.getElementById("answerStatus").innerHTML = "Correct!";
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     }
     else {
-           timerCount = timerCount - 15;
+      timerCount = timerCount - 15;
+      document.getElementById("answerStatus").innerHTML = "Wrong!"
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     } 
     document.getElementById("ques3").style.display = "none";
     document.getElementById("questionForm3").style.display = "none";
@@ -165,9 +192,17 @@ function startGame() {
     var q4=document.quiz.ques4.value;
     if (q4==="Stravinsky") {
       score++
-        }
+      document.getElementById("answerStatus").innerHTML = "Correct!";
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
+    }
     else {
-         timerCount = timerCount - 15;
+      timerCount = timerCount - 15;
+      document.getElementById("answerStatus").innerHTML = "Wrong!"
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     }   
     document.getElementById("ques4").style.display = "none";
     document.getElementById("questionForm4").style.display = "none";
@@ -182,9 +217,17 @@ function startGame() {
     var q5=document.quiz.ques5.value;
     if (q5==="Barber") {
       score++
-        }
+      document.getElementById("answerStatus").innerHTML = "Correct!";
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
+    }
     else {
-          timerCount = timerCount - 15;
+      timerCount = timerCount - 15;
+      document.getElementById("answerStatus").innerHTML = "Wrong!"
+      setTimeout (function(){
+        document.getElementById("answerStatus").innerHTML = "";
+      }, 1500)
     } 
     document.getElementById("ques5").style.display = "none";
     document.getElementById("questionForm5").style.display = "none";
@@ -249,10 +292,13 @@ function startGame() {
     document.getElementById("high-scores").style.display = "none";
     
     highScore = JSON.parse(window.localStorage.getItem('highScore'));
-    highScore.sort(function(a,b){
+    if (highScore !== null){ 
+      highScore.sort(function(a,b){
       return b.score -a.score
-      
-  })
+      })
+    } else {
+      highScore = 0
+    }
   // console.log(highScore);
   
   for(var i = 0; i < highScore.length; i++){
@@ -265,8 +311,14 @@ function startGame() {
 }
 
 // This function clears the local storage
+// added an indicator for clear storage
 function clearLocal() {
   localStorage.clear();
+  document.getElementById("clearScores").innerHTML = "High Scores Cleared"
+      setTimeout (function(){
+        document.getElementById("clearScores").innerHTML = "";
+      }, 1500)
+
 
 
 }

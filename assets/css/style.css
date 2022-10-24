@@ -261,7 +261,7 @@ body {
   color: white;
 }
 
-#resetGameHS{
+#resetGameHS {
   font-size: 16px;
   font-weight: bold;
   height: 50px;
@@ -272,6 +272,32 @@ body {
   left: 20%;  
   background-color: blueviolet;
   color: white;
+}
+
+.answerStatus {
+  color: orange;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 70%;
+  left: 43%;
+  right: 30%;
+  padding: 10px;
+
+}
+
+#clearScores {
+  color: orange;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  right: 30%;
+  padding: 10px;
+
 }
 
 

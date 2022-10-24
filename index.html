@@ -87,8 +87,14 @@
           <p class="choiceBtn"><input type="radio" name="ques5" value="Stravinsky"> Stravinsky</p>
           <p class="choiceBtn"><input type="radio" name="ques5" value="Barber"> Barber</p>
           <p>________________________________________</p>
+          
         </div>
         <input id="submit5" class="submit" type="button" name="" value="Submit" onclick="question5result()">
+      </div>
+      
+      <!-- added a indicator for answer status -->
+      <div>
+        <p id="answerStatus" class="answerStatus"></p>
       </div>
 
       <!-- added the add initials page -->
@@ -102,18 +108,20 @@
       <div id="replay">
         <p id="yourScore"></p>
         <input id="playAgain" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
-        <input id="resetGame" class="replay" type="button" name="" value="Reset Game" onclick="clearLocal()">
+        <input id="resetGame" class="replay" type="button" name="" value="Reset High Scores" onclick="clearLocal()">
       </div>
       <!-- added the highscore page -->
       <div id="highScorePage">    
         <p id="hsTitle">High Scores</p>
         <input id="playAgainHS" class="replay" type="button" name="" value="Play Again" onclick="location.reload()">
-        <input id="resetGameHS" class="replayHS" type="button" name="" value="Reset Game" onclick="clearLocal()">
+        <input id="resetGameHS" class="replayHS" type="button" name="" value="Reset High Scores" onclick="clearLocal()">
       </div>
       <!-- added the sorting element to the page -->
       <ol id="sortedScores"></ol>
       
-
+      <div>
+        <p id="clearScores" class="clearScores"></p>
+      </div>
     
        
     </form>
