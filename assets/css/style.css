@@ -1,3 +1,11 @@
+:root {
+
+  --light: white;
+  --purple: blueviolet;
+  
+  }
+/* added color variables  */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,14 +21,14 @@ body {
 
 .header {
   padding: 20px;
-  color: #ffffff;
+  color: var(--light);
 }
 
 .high-scores {
   display: inline-block;
-  color: blueviolet;
-  background-color: white;
-  border: #ffffff;
+  color: var(--purple);
+  background-color: var(--light);
+  border: var(--light);;
   cursor: pointer;
   padding: 5px;
   font-size: 15px;
@@ -56,8 +64,8 @@ body {
   position: absolute;
   top: 60%;
   left: 43%;  
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
 }
 
 .large-font {
@@ -132,7 +140,7 @@ body {
 
 .choiceBtn:hover {
   background-color: blue;
-  color: white;
+  color: var(--light);;
   height: 40px;
   width: 200px;
   margin: 4px;
@@ -143,8 +151,8 @@ body {
 }
 
 .choiceBtn {
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
   height: 40px;
   width: 200px;
   padding-top: 10px;
@@ -160,8 +168,8 @@ body {
   left: 40%;
   right: 48%;
   padding: 10px;
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
   height: 70px;
   width: 200px;
   font-size: 30px;
@@ -174,8 +182,8 @@ body {
   right: 48%;
   padding: 10px;
   font-weight: bolder;
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
   height: 70px;
   width: 200px;
   font-size: 30px;
@@ -231,8 +239,8 @@ body {
   position: absolute;
   top: 60%;
   left: 33%;  
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
 }
 
 #playAgainHS {
@@ -244,8 +252,8 @@ body {
   position: absolute;
   top: 20%;
   left: 20%;  
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
 }
 
 #resetGame {
@@ -257,8 +265,8 @@ body {
   position: absolute;
   top: 60%;
   left: 53%;  
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
 }
 
 #resetGameHS {
@@ -270,8 +278,8 @@ body {
   position: absolute;
   top: 100%;
   left: 20%;  
-  background-color: blueviolet;
-  color: white;
+  background-color: var(--purple);
+  color: var(--light);;
 }
 
 .answerStatus {
