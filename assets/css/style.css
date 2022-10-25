@@ -6,6 +6,8 @@
   }
 /* added color variables  */
 
+/* cleaned up some stuff not used! */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -47,12 +49,6 @@ body {
   font-size: 25 px;
   padding-top: 4%;
   padding-left: 10px;
-}
-
-.score-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 170px;
 }
 
 .start-button {

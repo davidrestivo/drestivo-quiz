@@ -36,13 +36,13 @@
 //If the Restart button is pushed, the game restarts by retriggering the 1st function
 //If the game is over, display initials with the score again.
 
+/* cleaned up some stuff not used! */
+
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var score = 0;
 var timer;
 var timerCount;
-var wordBlank = document.querySelector("#resultTxt");
-var finalScore = document.getElementById("currentScore");
 var initialsEl;
 var highScore = 0;
 var highScoreHtml = "";
